@@ -1,0 +1,2 @@
+# WechatRedPackdgeAutoTool
+一个基于图像识别的桌面Wechat红包自动抢夺工具，通过 OpenCV 模板匹配技术实现自动识别和点击

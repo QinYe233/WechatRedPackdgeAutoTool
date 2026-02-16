@@ -259,7 +259,7 @@ wechat-red-packet-auto/
 ├── wechat_red_packet_auto.py  # 主程序
 ├── select_region.py           # 区域选择工具
 ├── README.md                  # 说明文档
-└── PNG/                 # 模板图片目录（自行创建）
+└── PNG/                 # 模板图片目录
     ├── red_packet_icon.png
     ├── open_button.png
     └── back_icon.png

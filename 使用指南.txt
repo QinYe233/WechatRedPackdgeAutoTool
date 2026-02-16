@@ -1,0 +1,133 @@
+# 🚀 快速使用指南
+
+## 📦 文件清单
+
+确保你的文件夹中包含以下文件：
+
+```
+wechat-red-packet-auto/
+├── wechat_red_packet_auto.py  ✓ 主程序
+├── select_region.py           ✓ 区域选择工具
+├── README.md                  ✓ 详细说明文档
+├── 使用指南.txt               ✓ 本文件
+└── PNG/                       ✓ 模板图片文件夹
+    ├── red_packet_icon.png    ✓ 红包图标
+    ├── open_button.png        ✓ 打开按钮
+    └── back_icon.png          ✓ 关闭按钮
+```
+
+## ⚡ 3 步开始使用
+
+### 第 1 步：安装依赖
+
+打开命令行（CMD 或 PowerShell），执行：
+
+```bash
+pip install opencv-python numpy pyautogui
+```
+
+### 第 2 步：配置搜索区域（可选但推荐）
+
+运行区域选择工具：
+
+```bash
+python select_region.py
+```
+
+按照提示操作，获取配置参数后：
+1. 打开 `wechat_red_packet_auto.py` 文件
+2. 找到第 239 行 `'back_button_search_region': None,`
+3. 替换为工具生成的参数
+
+### 第 3 步：运行程序
+
+```bash
+python wechat_red_packet_auto.py
+```
+
+**就这么简单！** 程序会自动开始抢红包。
+
+按 `Ctrl+C` 可随时停止。
+
+## 🎯 常见使用场景
+
+### 场景 1：首次使用（推荐）
+
+```bash
+# 1. 安装依赖
+pip install opencv-python numpy pyautogui
+
+# 2. 配置区域（防止误触）
+python select_region.py
+# 按提示选择区域，复制参数到主程序第 239 行
+
+# 3. 运行
+python wechat_red_packet_auto.py
+```
+
+### 场景 2：快速开始（跳过区域配置）
+
+```bash
+# 1. 安装依赖
+pip install opencv-python numpy pyautogui
+
+# 2. 直接运行（使用默认配置）
+python wechat_red_packet_auto.py
+```
+
+**注意**：跳过区域配置可能导致误点其他程序的关闭按钮。
+
+### 场景 3：微信界面更新后
+
+如果程序突然识别不到按钮：
+
+```bash
+# 1. 重新截取模板图片
+# 使用微信截图 (Alt+A) 截取新的按钮图片
+
+# 2. 替换 PNG 文件夹中的对应文件
+# 保持文件名不变
+
+# 3. 重新运行程序
+python wechat_red_packet_auto.py
+```
+
+## ❓ 快速问题解答
+
+### Q: 程序识别不到红包？
+
+**检查清单：**
+- [ ] PNG 文件夹中的图片是否存在？
+- [ ] 微信窗口是否在屏幕可见区域？
+- [ ] 是否使用的是桌面版微信（不支持网页版）？
+
+**解决方法：**
+- 降低匹配度：将第 231 行 `'threshold': 0.8` 改为 `0.7`
+
+### Q: 误点了其他程序的按钮？
+
+**解决方法：**
+1. 运行 `select_region.py` 限制搜索区域
+2. 提高阈值：将第 238 行改为 `'back_button_threshold': 1.0`
+
+### Q: 程序运行卡顿？
+
+**解决方法：**
+- 增加检测间隔：将第 232 行 `'interval': 0.02` 改为 `0.05`
+
+## 📞 获取帮助
+
+- 详细文档：查看 `README.md`
+- 常见问题：查看 README 的"常见问题"部分
+- 技术原理：查看 README 的"技术原理"部分
+
+## ⚠️ 重要提示
+
+- ✅ 仅支持桌面版微信
+- ✅ 仅供学习交流使用
+- ⚠️ 频繁使用可能被微信检测
+- ⚠️ 切换分辨率后需重新截图
+
+---
+
+**祝你抢红包顺利！** 🎉
